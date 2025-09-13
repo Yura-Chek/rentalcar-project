@@ -1,17 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars } from "./operations";
 
+const initialState = {
+  cars: [],
+  page: 1,
+  totalPages: 0,
+  totalCars: 0,
+  isLoadingInitial: true,
+  isLoadingMore: false,
+  error: null,
+};
+
 const carsSlice = createSlice({
   name: "cars",
-  initialState: {
-    cars: [],
-    totalCars: 0,
-    page: 1,
-    totalPages: 0,
-    isLoadingInitial: true,
-    isLoadingMore: false,
-    error: null,
-  },
+  initialState,
   reducers: {
     setLoadingInitial: (state, action) => {
       state.isLoadingInitial = action.payload;
@@ -29,9 +31,9 @@ const carsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCars.pending, (state, action) => {
-        const page = action.meta.arg?.page || 1;
+        const currentPageNumber = action.meta.arg?.page || 1;
 
-        if (page === 1) {
+        if (currentPageNumber === 1) {
           state.isLoadingInitial = true;
           state.cars = [];
         } else {
@@ -39,12 +41,15 @@ const carsSlice = createSlice({
         }
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
-        if (action.meta.arg.page === 1) {
-          state.cars = action.payload.cars;
-        } else {
+        const currentPageNumber = action.meta.arg.page;
+
+        if (currentPageNumber !== 1) {
           state.cars = [...state.cars, ...action.payload.cars];
           state.isLoadingMore = false;
+        } else {
+          state.cars = action.payload.cars;
         }
+
         state.totalCars = action.payload.totalCars;
         state.totalPages = action.payload.totalPages;
         state.page = action.payload.page;

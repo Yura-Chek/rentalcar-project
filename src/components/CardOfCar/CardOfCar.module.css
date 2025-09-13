@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 1440px;
+  height: 700px;
+  padding: 436px 329px 60px 328px;
+  background: url("../../image/Hero-car@2x.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.heading {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 120%;
+  color: #fff;
+}
+
+.subheading {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  text-align: center;
+  color: #fff;
+}
+
+.ctaBtn {
+  width: 276px;
+  height: 44px;
+  padding: 12px 88px;
+  border: none;
+  border-radius: 12px;
+  background: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 125%;
+  color: #fff;
+  transition: background 0.8s ease;
+}
+
+.ctaBtn:hover,
+.ctaBtn:focus {
+  background: #0b44cd;
+}

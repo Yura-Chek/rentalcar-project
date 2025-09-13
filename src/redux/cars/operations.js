@@ -7,24 +7,27 @@ export const fetchCars = createAsyncThunk(
   "cars/fetchAll",
   async ({ page = 1, filters = {}, limit = 12 } = {}, thunkAPI) => {
     try {
-      const params = {};
-      if (filters.brand) params.brand = filters.brand;
-      if (filters.price != null) params.rentalPrice = filters.price;
-      if (filters.minMileage != null) params.minMileage = filters.minMileage;
-      if (filters.maxMileage != null) params.maxMileage = filters.maxMileage;
+      const queryParams = {};
 
-      const res = await axios.get("/cars", {
-        params: { page, limit, ...params },
+      if (filters.minMileage != null)
+        queryParams.minMileage = filters.minMileage;
+      if (filters.maxMileage != null)
+        queryParams.maxMileage = filters.maxMileage;
+      if (filters.brand) queryParams.brand = filters.brand;
+      if (filters.price != null) queryParams.rentalPrice = filters.price;
+
+      const response = await axios.get("/cars", {
+        params: { page, limit, ...queryParams },
       });
 
       return {
-        cars: res.data.cars,
-        totalCars: res.data.totalCars,
-        page: Number(res.data.page),
-        totalPages: Number(res.data.totalPages),
+        cars: response.data.cars,
+        totalCars: response.data.totalCars,
+        page: Number(response.data.page),
+        totalPages: Number(response.data.totalPages),
       };
-    } catch (err) {
-      return thunkAPI.rejectWithValue(err.message);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
