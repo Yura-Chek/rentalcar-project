@@ -1,59 +1,92 @@
 .wrapper {
+  position: relative;
+  height: 424px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
-  width: 1440px;
-  height: 700px;
-  padding: 436px 329px 60px 328px;
-  background: url("../../image/Hero-car@2x.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-.content {
+.image {
+  width: 276px;
+  height: 268px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 16px;
 }
 
-.heading {
-  font-family: "Manrope", sans-serif;
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 120%;
-  color: #fff;
-}
-
-.subheading {
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 133%;
-  text-align: center;
-  color: #fff;
-}
-
-.ctaBtn {
+.moreBtn {
   width: 276px;
   height: 44px;
-  padding: 12px 88px;
+  padding: 12px 97px;
   border: none;
   border-radius: 12px;
   background: #3470ff;
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 125%;
   color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 125%;
+  font-family: "Manrope", sans-serif;
   transition: background 0.8s ease;
 }
-
-.ctaBtn:hover,
-.ctaBtn:focus {
+.moreBtn:hover,
+.moreBtn:focus {
   background: #0b44cd;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.carTitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 125%;
+  color: #101828;
+}
+
+.highlight {
+  color: #3470ff;
+}
+
+.priceTag {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 125%;
+  color: #101828;
+}
+
+.meta {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 133%;
+  color: #8d929a;
+}
+
+.mb {
+  margin-bottom: 4px;
+}
+
+.favBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

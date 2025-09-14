@@ -1,0 +1,18 @@
+.wrapper {
+  text-decoration: none;
+  padding: 26px 0;
+}
+
+.brand {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brandMain {
+  color: #1f2937;
+}
+
+.brandAccent {
+  color: #2563eb;
+}

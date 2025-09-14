@@ -1,0 +1,23 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.heading {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+  color: #101828;
+}
+
+.subtitle {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 125%;
+  color: #8d929a;
+}

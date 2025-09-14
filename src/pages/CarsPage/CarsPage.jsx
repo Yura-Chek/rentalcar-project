@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import CarsList from "../../components/CarList/CarList.jsx";
+import CarsList from "../../components/ListCar/ListCar.jsx";
 import SearchBox from "../../components/SearchBox/SearchBox.jsx";
 import { fetchBrands } from "../../redux/brands/operations.js";
 import { fetchCars } from "../../redux/cars/operations.js";

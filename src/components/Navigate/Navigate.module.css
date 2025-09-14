@@ -1,0 +1,20 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #101828;
+  padding: 24px 0;
+}
+
+.active {
+  color: #0b44cd;
+}
